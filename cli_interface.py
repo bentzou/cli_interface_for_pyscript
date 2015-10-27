@@ -2,21 +2,6 @@ import inspect
 import sys
 
 class CliInterface:
-   """
-   This class wraps a Python class and provides a CLI interface.
-
-   Assumptions
-   - methods beginning with '_' are private and are not shown under Usage.
-   - methods are classmethods
-   - parent class does not need to be initialized
-
-   Usage
-   - At the bottom of the tool script, add:
-      import cli_interface
-      if __name__ == '__main__':
-         cli_interface.CliInterface(PerfPortalTest).run()
-   """
-
    def __init__(self, tool_class):
       self.tool_class = tool_class
 
