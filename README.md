@@ -2,9 +2,8 @@
 The class provides a CLI interface for an existing toolset written in Python.
 
 # Assumptions
-1. methods beginning with '_' are private and are not shown under Usage.
-2. methods are classmethods
-3. parent class does not need to be initialized
+1. Methods beginning with '_' are considered private and not displayed under Usage.
+2. Tool class contains exclusively classmethods.
 
 # Usage
 At the bottom of your script, add:
@@ -25,7 +24,6 @@ class Toolset:
    @classmethod
    def tool_method_keyword_args(cls, pos_arg1, pos_arg2, kw_arg1, kw_arg2):
       pass
-
 
 import cli_interface
 if __name__ == '__main__':
