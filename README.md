@@ -1,12 +1,19 @@
 ## cli_interface_for_pyscript
 The class provides a CLI interface for an existing toolset written in Python.
 
-### Assumptions
+#### Contract
 1. Methods beginning with '_' are considered private and not displayed under Usage.
 2. Tool class contains exclusively classmethods.
 
-### Usage
+#### Usage
 At the bottom of your script, add:
+```python
+import cli_interface
+if __name__ == '__main__':
+   cli_interface.CliInterface(Toolset).run()
+```
+
+#### Example
 ```python
 class Toolset:
    @classmethod
@@ -30,7 +37,7 @@ if __name__ == '__main__':
    cli_interface.CliInterface(Toolset).run()
 ```
 
-### Output
+#### Output
 ```
 $> python toolset.py
 
