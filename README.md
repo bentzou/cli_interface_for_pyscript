@@ -40,7 +40,6 @@ if __name__ == '__main__':
 #### Output
 ```
 $> python toolset.py
-
 Usage: toolset.py command [args...]
 
 Available commands and the parameters:
