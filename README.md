@@ -8,8 +8,8 @@ The class provides a CLI interface for an existing toolset written in Python.
 #### Usage
 At the bottom of your script, add:
 ```python
-import cli_interface
 if __name__ == '__main__':
+   import cli_interface
    cli_interface.CliInterface(Toolset).run()
 ```
 
