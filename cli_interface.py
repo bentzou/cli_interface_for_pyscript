@@ -1,7 +1,8 @@
 import inspect
+import json
 import sys
 
-class CliInterface:
+class CliInterface(object):
    def __init__(self, tool_class):
       self.tool_class = tool_class
 
@@ -58,5 +59,8 @@ class CliInterface:
          sys.exit(1)
 
       # looks good -- run the command
-      returncode = getattr(self.tool_class, command)(*arguments)
-      sys.exit(returncode)
+      try:
+         return_value = getattr(self.tool_class, command)(*arguments)
+         print json.dumps(return_value)
+      except Exception, e:
+         sys.exit(str(e))
