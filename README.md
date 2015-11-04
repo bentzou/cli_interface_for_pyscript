@@ -32,8 +32,8 @@ class Toolset:
    def tool_method_keyword_args(cls, pos_arg1, pos_arg2, kw_arg1, kw_arg2):
       pass
 
-import cli_interface
 if __name__ == '__main__':
+   import cli_interface
    cli_interface.CliInterface(Toolset).run()
 ```
 
