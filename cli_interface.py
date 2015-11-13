@@ -1,12 +1,13 @@
 from inspect import getargspec
 from inspect import getdoc
+from inspect import ismethod
 from json import dumps
 import sys
 
 class CliInterface(object):
    def __init__(self, tool_class):
       self.tool_class = tool_class
-      self.commands = sorted(self.tool_class.__dict__.keys() + ["help"])
+      self.commands = sorted(["help"] + [k for k in tool_class.__dict__.keys() if ismethod(getattr(tool_class, k))])
 
    def usage(self):
       print "Usage: {0} command [args...]".format(sys.argv[0])
